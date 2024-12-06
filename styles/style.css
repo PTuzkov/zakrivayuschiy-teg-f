@@ -18,10 +18,9 @@
   font-family: var(--page-main-font-family, "Inter", sans-serif);
   font-variation-settings: "wght" var(--page-main-font-weight, 400);
   color: var(--text-color, #000000);
-  width: 1440px;
-  min-width: 430px;
-  margin-top: 104px;
-  margin-bottom: 100px;
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  padding-block-start: 100px;
 }
 
 .page__header {
@@ -38,32 +37,29 @@
   justify-content: center;
   font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
   line-height: normal;
-  width: 696px; /* Фиксированная ширина */
-  height: 364px; /* Фиксированная высота */
+  max-width: 696px;
+  padding-bottom: 3px;
 }
 
 .header__title {
-  font-size: 65px;
+  font-size: clamp(49px, 5vw, 65px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
   margin-block-end: 63px;
-  width: 455px;
-  height: 65px;
-  margin-top: 128px;
+  margin-top: 126px;
   margin-bottom: 171px;
 }
 
 .header__subtitle {
-  font-size: 23px;
+  font-size: clamp(14px, 2vw, 23px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
-  margin-top: -153px; /* Отступ сверху */
+  margin-top: -149px; /* Отступ сверху */
   margin-bottom: -100px; /* Отступ снизу */
-
 }
 
 .main {
@@ -75,7 +71,7 @@
 
 .cards-list {
   display: grid;
-  gap: 52px;
+  gap: 50px;
   max-inline-size: 696px;
 }
 
@@ -83,7 +79,6 @@
   background: var(--page-background-color, #ffffff);
   border: 2px solid var(--text-color, #000000);
   margin-inline: auto;
-  max-inline-size: 696px;
 }
 
 .card__header {
@@ -110,8 +105,8 @@
   position: absolute;
   z-index: 1;
   opacity: 0.5;
-  text-shadow: 0 0 1px var(--page-background-color, #ffffff);
-  inset-inline-end: 13px;
+  text-shadow: 0 0 4px var(--page-background-color, #ffffff);
+  inset-inline-end: 20px;
   inset-block-start: 24px;
   mix-blend-mode: hard-light;
 }
@@ -138,7 +133,7 @@
   align-items: stretch;
   justify-content: end;
   gap: 5px;
-  padding: 25px 25px 23px 25px;
+  padding: 27px 20px 23px 25px;
 }
 
 /* Фильтры */
@@ -194,6 +189,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  font-size: 14px;
 }
 
 .modal::backdrop {
@@ -219,7 +215,7 @@
   font-size: 14px;
   position: relative;
   z-index: 1;
-  padding: 10px 36px;
+  padding: 10.3px 38px 14.3px 34px;
   text-transform: inherit;
   transition: box-shadow 0.3s ease;
   cursor: pointer;
@@ -256,7 +252,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 9px;
   padding: 15px 20px;
 }
 
@@ -294,7 +290,7 @@
   inline-size: 39px;
 }
 
-@media (width <= 375px) {
+@media (width <= 376px) {
   .modal {
     padding: 28px 34px 28px 40px;
     max-inline-size: 340px;
@@ -308,7 +304,6 @@
   .button--save {
     flex-direction: column;
   }
-
 }
 
 @supports (
