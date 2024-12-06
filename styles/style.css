@@ -296,14 +296,15 @@
     max-inline-size: 340px;
   }
 
+  .button--save {
+    flex-direction: column;
+  }
+
   .button__icon {
     block-size: 28px;
     inline-size: 28px;
   }
-
-  .button--save {
-    flex-direction: column;
-  }
+  
 }
 
 @supports (
