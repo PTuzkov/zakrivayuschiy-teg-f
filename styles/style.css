@@ -20,15 +20,7 @@
   color: var(--text-color, #000000);
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  padding-block-start: 100px;
-}
-
-.page__header {
-  margin-block-end: 100px;
-}
-
-.page-title {
-  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  padding-block-start: 101px;
 }
 
 .header {
@@ -37,8 +29,15 @@
   justify-content: center;
   font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
   line-height: normal;
-  max-width: 696px;
-  padding-bottom: 3px;
+  gap: 20px;
+}
+
+.page__header {
+  margin-block-end: 100px;
+}
+
+.page-title {
+  font-size: clamp(10.0625rem, 7.7104rem + 1.5023vw, 4.0625rem);
 }
 
 .header__title {
@@ -47,9 +46,7 @@
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
-  margin-block-end: 63px;
-  margin-top: 126px;
-  margin-bottom: 171px;
+  margin-block-start: clamp(7.5rem, 7.324rem + 0.751vw, 8rem);
 }
 
 .header__subtitle {
@@ -58,8 +55,7 @@
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
-  margin-top: -149px; /* Отступ сверху */
-  margin-bottom: -100px; /* Отступ снизу */
+  margin-block-end: clamp(7.99rem, 2.324rem + 1.751vw, 8rem);
 }
 
 .main {
@@ -71,7 +67,7 @@
 
 .cards-list {
   display: grid;
-  gap: 50px;
+  gap: 54.3px;
   max-inline-size: 696px;
 }
 
@@ -79,11 +75,12 @@
   background: var(--page-background-color, #ffffff);
   border: 2px solid var(--text-color, #000000);
   margin-inline: auto;
+  max-inline-size: 696px;
 }
 
 .card__header {
   border-block-end: 2px solid var(--text-color, #000000);
-  padding: 4px 10px;
+  padding: 3.7px 10px;
 }
 
 .card__title {
@@ -106,8 +103,8 @@
   z-index: 1;
   opacity: 0.5;
   text-shadow: 0 0 4px var(--page-background-color, #ffffff);
-  inset-inline-end: 20px;
-  inset-block-start: 24px;
+  inset-inline-end: 23px;
+  inset-block-start: 26px;
   mix-blend-mode: hard-light;
 }
 
@@ -133,7 +130,7 @@
   align-items: stretch;
   justify-content: end;
   gap: 5px;
-  padding: 27px 20px 23px 25px;
+  padding: 25.6px 22px 23px 25px;
 }
 
 /* Фильтры */
@@ -171,6 +168,7 @@
 .modal {
   background: var(--page-background-color, #ffffff);
   font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
+  font-size: 14px;
   color: var(--text-color, #000000);
   border: 2px solid var(--text-color, #000000);
   padding: 25px 30px;
@@ -201,6 +199,7 @@
   flex-shrink: 0;
   inline-size: 39px;
   block-size: 39px;
+  margin-block: 12px;
 }
 
 .modal__button {
@@ -215,8 +214,9 @@
   font-size: 14px;
   position: relative;
   z-index: 1;
-  padding: 10.3px 38px 14.3px 34px;
+  padding: 10px 36px;
   text-transform: inherit;
+  text-align: center;
   transition: box-shadow 0.3s ease;
   cursor: pointer;
   appearance: none;
@@ -252,8 +252,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 9px;
-  padding: 15px 20px;
+  gap: 10px;
+  padding: 16px 20px;
+  margin-top: -7px;
 }
 
 .button__text,
@@ -286,25 +287,61 @@
 }
 
 .like-icon {
-  block-size: 36px;
+  block-size: 37.1px;
   inline-size: 39px;
 }
 
 @media (width <= 376px) {
+  .page {
+    padding-block-start: 99px;
+  }
+
+  .page__header {
+    margin-block-end: 96px;
+  }
+
   .modal {
     padding: 28px 34px 28px 40px;
     max-inline-size: 340px;
   }
+
+  .modal__content {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 14px;
+    text-align: justify;
+  }
+
 
   .button--save {
     flex-direction: column;
   }
 
   .button__icon {
-    block-size: 28px;
+    block-size: 29px;
     inline-size: 28px;
   }
-  
+
+  .cards-list {
+    display: grid;
+    gap: 48.8px;
+  }
+
+  .card__img-label {
+    font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
+    font-size: 14px;
+    line-height: normal;
+    color: var(--text-color, #000000);
+    position: absolute;
+    z-index: 1;
+    opacity: 0.5;
+    text-shadow: 0 0 4px var(--page-background-color, #ffffff);
+    inset-inline-end: 11px;
+    inset-block-start: 23px;
+    mix-blend-mode: hard-light;
+  }
+
 }
 
 @supports (
